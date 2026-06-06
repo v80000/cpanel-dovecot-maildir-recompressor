@@ -1,0 +1,1 @@
+BLOCK|usuario2@example.net|cpuser2|example.net|existe STAGE previo
