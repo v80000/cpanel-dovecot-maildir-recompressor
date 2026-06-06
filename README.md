@@ -1,15 +1,31 @@
 # Recompresor seguro de buzones Maildir en cPanel/Dovecot
 
+## Nota importante antes de comenzar
+
+Este repositorio documenta un caso de estudio técnico. La implementación productiva completa no se publica, pero dispongo del flujo completo, probado y preparado para su adaptación a entornos reales en producción.
+
+Si una persona, organización o empresa necesita una solución similar para recomprimir buzones Maildir históricos en cPanel/Dovecot en producción, puede contactarme directamente. Los medios de contacto están disponibles en el README.md de mi repositorio personal "v80000".
+
+Toda consulta o posible implementación se tratará con privacidad y confidencialidad, el cual como se sabe de mí, siempre es mi prioridad.
+
 ## Descripción
 
-Este proyecto documenta un flujo real de automatización para recomprimir buzones Maildir en un entorno cPanel/Dovecot donde la compresión de correo estuvo deshabilitada durante mucho tiempo.
+Este proyecto documenta un flujo de automatización que diseñé y desarrollé para recomprimir buzones Maildir en un entorno cPanel/Dovecot donde la compresión de correo había estado deshabilitada durante mucho tiempo, mi flujo completo está pensado ya para actuar diréctamente en producción, ya que lo desarrollé en una empresa para solucionar este problema, tiene muchas, muchas pruebas hechas, y ya ha sido muy utilizado en producción sin problema alguno, pero por ello se realizan validaciones previas, ya que son 4 scripts, uno para validación individual, otro para validación en lotes, que usa el validación individal como worker, y luego los propios de recompresión, que funcionan igual, recompresión individual, y luego recompresión de buzones por lotes, sigue leyendo para más información y entender el como funciona.
 
-El problema era claro: aunque posteriormente se habilitó la compresión en el servidor, todos los correos antiguos que ya habían entrado en los buzones seguían almacenados sin comprimir. En una infraestructura que gestiona correo para muchas empresas, esto puede acabar suponiendo una cantidad enorme de espacio ocupado innecesariamente, backups más pesados, más tiempo de mantenimiento y más riesgo operativo.
+El problema era bastante común en infraestructuras de correo: aunque después se habilitase la compresión en el servidor, todos los correos antiguos que ya habían entrado en los buzones seguían almacenados sin comprimir. En una empresa que gestiona correo para muchos clientes, esto puede acabar suponiendo una gran cantidad de espacio ocupado innecesariamente, backups más pesados, ventanas de mantenimiento más largas y mayor coste operativo.
 
-La solución no consistía simplemente en “comprimir ficheros”. Había que hacerlo de forma segura, respetando la estructura Maildir, evitando pérdida de mensajes, evitando romper buzones de Dovecot, trabajando por lotes y teniendo siempre una forma de validar, registrar y revertir la operación si algo salía mal.
+La solución no era simplemente “comprimir ficheros”. Había que hacerlo con cuidado, respetando la estructura Maildir, evitando pérdida de mensajes, sin romper buzones de Dovecot, permitiendo ejecución por lotes y manteniendo siempre validación, logs y capacidad de rollback.
 
-Este repositorio es una documentación técnica del proyecto y de su arquitectura.
-Los scripts productivos reales no se publican por motivos de confidencialidad, seguridad operativa y protección de propiedad intelectual.
+Este repositorio es una documentación técnica de mi proyecto y de su arquitectura.
+Los scripts productivos reales no se publican por motivos de confidencialidad, seguridad operativa y protección de propiedad intelectual, para implementación, contactarme diréctamente.
+
+---
+
+## Nota rápida sobre los ejemplos
+
+Aunque este repositorio no incluye la implementación productiva real, recomiendo revisar la carpeta `examples/`, donde incluyo salidas anonimizadas del flujo: entrada por lotes, validación, ejecución del recompresor, logs de una recompresión correcta y ejemplo de rollback.
+
+Estos ejemplos ayudan a entender cómo se comporta el sistema en la práctica, qué información queda registrada y cómo se puede auditar cada operación realizada sobre un buzón.
 
 ---
 
@@ -331,7 +347,7 @@ Un flujo como este permite:
 
 Este repositorio no contiene los scripts productivos reales.
 
-Incluye documentación, arquitectura, ejemplos anonimizados y pseudocódigo para explicar el diseño técnico del flujo.
+Incluye documentación técnica, arquitectura y ejemplos anonimizados de entrada, salida y logs para explicar el diseño técnico del flujo sin publicar la implementación productiva.
 
 La implementación completa se mantiene privada por motivos de:
 
@@ -353,8 +369,10 @@ Este repositorio actúa como caso de estudio técnico y portfolio profesional.
 
 ## Aviso
 
-Este repositorio no debe usarse como herramienta lista para producción.
+Este repositorio no debe usarse como herramienta lista para producción, son solo explicaciones de como funciona todo, mi flujo personalizado, el cual SI está listo para aplicar en producción, quien se encuentre con este problema, como digo, que me contacte.
 
 Operaciones sobre Maildir, Dovecot y buzones reales pueden causar pérdida de datos si se ejecutan sin pruebas, backups, validación y conocimiento del entorno.
 
 Antes de aplicar un flujo similar en producción, es imprescindible adaptarlo, probarlo en laboratorio y disponer de una estrategia de recuperación.
+
+
