@@ -8,6 +8,8 @@ Si una persona, organización o empresa necesita una solución similar para reco
 
 Toda consulta o posible implementación se tratará con privacidad y confidencialidad, el cual como se sabe de mí, siempre es mi prioridad.
 
+Este flujo ha sido aplicado en buzones de más de 120GB, reduciendo su tamaño hasta en 70-80GB, el almacenamiento que se puede ahorrar, depende de varios factores.
+
 ## Descripción
 
 Este proyecto documenta un flujo de automatización que diseñé y desarrollé para recomprimir buzones Maildir en un entorno cPanel/Dovecot donde la compresión de correo había estado deshabilitada durante mucho tiempo, mi flujo completo está pensado ya para actuar diréctamente en producción, ya que lo desarrollé en una empresa para solucionar este problema, tiene muchas, muchas pruebas hechas, y ya ha sido muy utilizado en producción sin problema alguno, pero por ello se realizan validaciones previas, ya que son 4 scripts, uno para validación individual, otro para validación en lotes, que usa el validación individal como worker, y luego los propios de recompresión, que funcionan igual, recompresión individual, y luego recompresión de buzones por lotes, sigue leyendo para más información y entender el como funciona.
