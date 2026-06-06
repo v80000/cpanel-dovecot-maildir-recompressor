@@ -1,0 +1,6 @@
+# Formato: 
+# email|usuario_cpanel|dominio 
+
+usuario1@example.com|cpuser1|example.com
+usuario2@example.net|cpuser2|example.net
+usuario3@example.org|cpuser3|example.org
