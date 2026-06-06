@@ -1,0 +1,12 @@
+Validando: usuario1@example.com
+OK|usuario1@example.com|cpuser1|example.com|validacion limpia
+Validando: usuario2@example.net
+BLOCK|usuario2@example.net|cpuser2|example.net|existe STAGE previo
+Validando: usuario3@example.org
+OK|usuario3@example.org|cpuser3|example.org|validacion limpia
+
+TOTAL: 3
+OK: 2
+BLOCK: 1
+OK_FILE: /home/logsmail/ok.txt
+BLOCK_FILE: /home/logsmail/block.txt
