@@ -1,0 +1,37 @@
+[2026-01-01 12:00:00] INICIO script para usuario1@example.com
+[2026-01-01 12:00:00] ORIG=/home/cpuser1/mail/example.com/usuario1
+[2026-01-01 12:00:00] STAGE=/home/cpuser1/maildircomp/usuario1/Maildir
+[2026-01-01 12:00:00] BACKUP=/var/backups/mail/usuario1@example.com.precompress.20260101-120000
+[2026-01-01 12:00:00] Validando que exista ORIG
+[2026-01-01 12:00:00] Validando que no exista STAGE previo
+INICIO: Thu Jan  1 12:00:00 CET 2026
+EMAIL: usuario1@example.com
+BUZON ORIGINAL:
+8.7G    /home/cpuser1/mail/example.com/usuario1
+
+[2026-01-01 12:00:01] Creando STAGEBASE
+[2026-01-01 12:00:01] BACKUP 1: iniciando
+[2026-01-01 12:04:32] BACKUP 1: completado
+[2026-01-01 12:04:32] BACKUP 2: iniciando
+[2026-01-01 12:05:10] BACKUP 2: completado
+[2026-01-01 12:05:10] KICK: iniciando
+[2026-01-01 12:05:10] KICK: completado
+[2026-01-01 12:05:10] Esperando 3 segundos tras kick
+[2026-01-01 12:05:13] BACKUP FINAL: iniciando
+[2026-01-01 12:05:40] BACKUP FINAL: completado
+[2026-01-01 12:05:40] CUTOVER: marca creada en /tmp/recompress_cutover_usuario1_20260101-120000.mark
+[2026-01-01 12:05:40] MV1: moviendo ORIG -> OLD
+[2026-01-01 12:05:41] MV1 OK: ORIG -> OLD completado
+[2026-01-01 12:05:41] MV2: moviendo STAGE -> ORIG
+[2026-01-01 12:05:42] MV2 OK: STAGE -> ORIG completado
+[2026-01-01 12:05:42] Comprobando si entraron mensajes durante la ventana crítica
+[2026-01-01 12:05:42] No se detectó actividad nueva durante el cutover
+[2026-01-01 12:05:42] MV3: moviendo OLD -> BACKUP
+[2026-01-01 12:05:43] MV3 OK: OLD -> BACKUP completado
+[2026-01-01 12:05:43] Aplicando permisos finales
+[2026-01-01 12:05:45] Permisos finales aplicados
+FINAL: Thu Jan  1 12:05:45 CET 2026
+INBOX messages=18423 uidnext=18501 uidvalidity=1700000000
+4.1G    /home/cpuser1/mail/example.com/usuario1
+
+[2026-01-01 12:05:45] FINALIZADO correctamente para usuario1@example.com
