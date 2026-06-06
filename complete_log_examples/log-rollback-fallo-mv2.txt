@@ -1,0 +1,28 @@
+[2026-01-01 14:20:00] INICIO script para usuario3@example.org
+[2026-01-01 14:20:00] ORIG=/home/cpuser3/mail/example.org/usuario3
+[2026-01-01 14:20:00] STAGE=/home/cpuser3/maildircomp/usuario3/Maildir
+[2026-01-01 14:20:00] BACKUP=/var/backups/mail/usuario3@example.org.precompress.20260101-142000
+[2026-01-01 14:20:00] Validando que exista ORIG
+[2026-01-01 14:20:00] Validando que no exista STAGE previo
+INICIO: Thu Jan  1 14:20:00 CET 2026
+EMAIL: usuario3@example.org
+BUZON ORIGINAL:
+6.4G    /home/cpuser3/mail/example.org/usuario3
+
+[2026-01-01 14:20:01] Creando STAGEBASE
+[2026-01-01 14:20:01] BACKUP 1: iniciando
+[2026-01-01 14:22:18] BACKUP 1: completado
+[2026-01-01 14:22:18] BACKUP 2: iniciando
+[2026-01-01 14:22:55] BACKUP 2: completado
+[2026-01-01 14:22:55] KICK: iniciando
+[2026-01-01 14:22:55] KICK: completado
+[2026-01-01 14:22:55] Esperando 3 segundos tras kick
+[2026-01-01 14:22:58] BACKUP FINAL: iniciando
+[2026-01-01 14:23:20] BACKUP FINAL: completado
+[2026-01-01 14:23:20] CUTOVER: marca creada en /tmp/recompress_cutover_usuario3_20260101-142000.mark
+[2026-01-01 14:23:20] MV1: moviendo ORIG -> OLD
+[2026-01-01 14:23:21] MV1 OK: ORIG -> OLD completado
+[2026-01-01 14:23:21] MV2: moviendo STAGE -> ORIG
+[2026-01-01 14:23:22] ERROR en MV2: falló mover STAGE a ORIG
+[2026-01-01 14:23:22] ROLLBACK: restaurando OLD -> ORIG
+[2026-01-01 14:23:23] ERROR: rollback aplicado por fallo en STAGE->ORIG
