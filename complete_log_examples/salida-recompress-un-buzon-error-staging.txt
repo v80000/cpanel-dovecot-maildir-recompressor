@@ -1,0 +1,7 @@
+INICIO script para usuario2@example.net
+ORIG=/home/cpuser2/mail/example.net/usuario2
+STAGE=/home/cpuser2/maildircomp/usuario2/Maildir
+BACKUP=/var/backups/mail/usuario2@example.net.precompress.20260101-121500
+Validando que exista ORIG
+Validando que no exista STAGE previo
+Error: ya existe staging anterior: /home/cpuser2/maildircomp/usuario2/Maildir
