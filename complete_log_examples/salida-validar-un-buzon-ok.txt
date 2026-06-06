@@ -1,0 +1,1 @@
+OK|usuario1@example.com|cpuser1|example.com|validacion limpia
