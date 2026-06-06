@@ -1,0 +1,37 @@
+Procesando: usuario1@example.com
+INICIO script para usuario1@example.com
+ORIG=/home/cpuser1/mail/example.com/usuario1
+STAGE=/home/cpuser1/maildircomp/usuario1/Maildir
+BACKUP=/var/backups/mail/usuario1@example.com.precompress.20260101-120000
+Validando que exista ORIG
+Validando que no exista STAGE previo
+Creando STAGEBASE
+BACKUP 1: iniciando
+BACKUP 1: completado
+BACKUP 2: iniciando
+BACKUP 2: completado
+KICK: iniciando
+KICK: completado
+Esperando 3 segundos tras kick
+BACKUP FINAL: iniciando
+BACKUP FINAL: completado
+CUTOVER: marca creada en /tmp/recompress_cutover_usuario1_20260101-120000.mark
+MV1: moviendo ORIG -> OLD
+MV1 OK: ORIG -> OLD completado
+MV2: moviendo STAGE -> ORIG
+MV2 OK: STAGE -> ORIG completado
+Comprobando si entraron mensajes durante la ventana crítica
+No se detectó actividad nueva durante el cutover
+MV3: moviendo OLD -> BACKUP
+MV3 OK: OLD -> BACKUP completado
+Aplicando permisos finales
+Permisos finales aplicados
+FINALIZADO correctamente para usuario1@example.com
+OK: usuario1@example.com
+
+Procesando: usuario2@example.net
+Error: ya existe staging anterior: /home/cpuser2/maildircomp/usuario2/Maildir
+
+TOTAL: 2
+OK: 1
+FAIL: 1
